@@ -6,7 +6,7 @@
   <title>JourneyCrew • Plan Together. Travel Better.</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
     :root {
       --orange: #FF9E2C;
@@ -16,6 +16,10 @@
       --gradient: linear-gradient(180deg, #4A90E2 0%, #FF9E2C 100%);
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -23,8 +27,14 @@
       color: var(--navy);
     }
 
+    a {
+      color: inherit;
+    }
+
+    /* HEADER */
+
     header {
-      padding: 2rem 1.5rem;
+      padding: 1.75rem 1.5rem 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -39,47 +49,130 @@
     }
 
     .logo img {
-      height: 42px;
-      width: 42px;
+      height: 40px;
+      width: 40px;
     }
 
+    /* HERO */
+
     .hero {
-      padding: 4rem 1.5rem 5rem;
-      text-align: center;
-      max-width: 780px;
+      padding: 3.5rem 1.5rem 4rem;
+      max-width: 900px;
       margin: 0 auto;
+      text-align: center;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: clamp(2.4rem, 5vw, 3.3rem);
       line-height: 1.1;
       font-weight: 700;
       margin-bottom: 1rem;
     }
 
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       margin-bottom: 2rem;
-      color: var(--navy);
+      color: #1f355c;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
     }
 
     .cta-btn {
       display: inline-block;
       background: var(--gradient);
-      padding: 1rem 2rem;
+      padding: 1rem 2.25rem;
       border-radius: 12px;
       color: white;
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 600;
       box-shadow: 0 6px 16px rgba(0,0,0,0.15);
       transition: 0.2s ease;
+      border: none;
+      cursor: pointer;
     }
 
     .cta-btn:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       box-shadow: 0 10px 22px rgba(0,0,0,0.18);
     }
+
+    .hero-caption {
+      font-size: 0.9rem;
+      color: #5b6a86;
+    }
+
+    /* SIGNUP SECTION */
+
+    .signup {
+      padding: 0 1.5rem 3rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .signup-card {
+      background: var(--lightgray);
+      border-radius: 18px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+
+    .signup-card h2 {
+      font-size: 1.5rem;
+      margin: 0 0 0.5rem;
+    }
+
+    .signup-card p {
+      margin: 0 0 1.25rem;
+      font-size: 0.98rem;
+      color: #4b5875;
+    }
+
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .signup-form input[type="email"] {
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 0.98rem;
+      font-family: inherit;
+      width: 100%;
+    }
+
+    .signup-form button {
+      align-self: flex-start;
+    }
+
+    .signup-note {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    @media (min-width: 640px) {
+      .signup-card {
+        padding: 2rem 2.25rem;
+      }
+
+      .signup-form {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .signup-form input[type="email"] {
+        flex: 1;
+      }
+    }
+
+    /* FEATURES */
 
     .features {
       background: var(--lightgray);
@@ -88,7 +181,7 @@
 
     .features h2 {
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 700;
       margin-bottom: 3rem;
     }
@@ -114,11 +207,54 @@
       margin-bottom: 1rem;
     }
 
+    .feature h3 {
+      margin-bottom: 0.6rem;
+      font-size: 1.2rem;
+    }
+
+    .feature p {
+      font-size: 0.95rem;
+      color: #4b5875;
+    }
+
+    /* FAQ */
+
+    .faq {
+      padding: 4rem 1.5rem 3.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 1.1rem 0;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .faq-answer {
+      font-size: 0.95rem;
+      color: #4b5875;
+      max-width: 48rem;
+    }
+
+    /* FOOTER */
+
     footer {
       text-align: center;
-      padding: 3rem 1rem;
-      color: #555;
-      font-size: 0.95rem;
+      padding: 2.5rem 1rem 3rem;
+      color: #6b7280;
+      font-size: 0.9rem;
     }
 
   </style>
@@ -129,7 +265,8 @@
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <img src="https://api.iconify.design/mdi:map-marker-circle.svg?color=%234A90E2" alt="Logo" />
+      <!-- Swap this <img> for your actual icon when you have it exported -->
+      <img src="https://api.iconify.design/mdi:map-marker.svg?color=%234A90E2" alt="JourneyCrew logo" />
       <span style="font-weight:700; font-size:1.3rem;">JourneyCrew</span>
     </div>
   </header>
@@ -138,7 +275,32 @@
   <section class="hero">
     <h1>Plan Trips Together.<br>Travel Better, Together.</h1>
     <p>Your travel crew – finally in sync. Plan itineraries, share updates, coordinate families, and make every journey smoother.</p>
-    <a href="#" class="cta-btn">Join the Waitlist</a>
+
+    <div class="hero-cta">
+      <a href="#signup" class="cta-btn">Join the Waitlist</a>
+      <div class="hero-caption">Be the first to try JourneyCrew when we launch on iOS.</div>
+    </div>
+  </section>
+
+  <!-- EMAIL SIGNUP -->
+  <section id="signup" class="signup">
+    <div class="signup-card">
+      <h2>Get Early Access</h2>
+      <p>Drop your email and we’ll invite you to the first wave of JourneyCrew beta testers.</p>
+
+      <!-- Replace `action` with your email service endpoint later -->
+      <form class="signup-form" method="post" action="#">
+        <input
+          type="email"
+          name="email"
+          placeholder="you@example.com"
+          required
+        />
+        <button type="submit" class="cta-btn">Notify Me</button>
+      </form>
+
+      <p class="signup-note">No spam. Just occasional updates and a link when we’re ready for you and your crew.</p>
+    </div>
   </section>
 
   <!-- FEATURES -->
@@ -148,34 +310,74 @@
     <div class="feature-grid">
 
       <div class="feature">
-        <img src="https://api.iconify.design/mdi:account-group.svg?color=%230F2347" />
+        <img src="https://api.iconify.design/mdi:account-group.svg?color=%230F2347" alt="" />
         <h3>Group Planning</h3>
-        <p>Create trips, invite your crew, and keep everything in one organized place.</p>
+        <p>Create trips, invite your crew, and keep everything in one organized space instead of scattered chats.</p>
       </div>
 
       <div class="feature">
-        <img src="https://api.iconify.design/mdi:calendar-range.svg?color=%230F2347" />
+        <img src="https://api.iconify.design/mdi:calendar-range.svg?color=%230F2347" alt="" />
         <h3>Shared Itineraries</h3>
-        <p>Day-by-day plans everyone can see, update, and vote on.</p>
+        <p>Day-by-day plans everyone can see, update, and vote on — from flights to food stops.</p>
       </div>
 
       <div class="feature">
-        <img src="https://api.iconify.design/mdi:chat-processing.svg?color=%230F2347" />
-        <h3>Group Messaging</h3>
-        <p>Skip the messy chats — keep all trip discussions organized.</p>
+        <img src="https://api.iconify.design/mdi:chat-processing.svg?color=%230F2347" alt="" />
+        <h3>Organized Messaging</h3>
+        <p>Skip the group-chat chaos. Keep decisions, polls, and updates tidy inside each trip.</p>
       </div>
 
       <div class="feature">
-        <img src="https://api.iconify.design/mdi:map-marker-radius.svg?color=%230F2347" />
+        <img src="https://api.iconify.design/mdi:map-marker-radius.svg?color=%230F2347" alt="" />
         <h3>Location Sharing</h3>
-        <p>Know where everyone is during the trip without texting nonstop.</p>
+        <p>See who’s where on travel days so no one gets left behind at the gate, trailhead, or cafe.</p>
       </div>
 
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">What is JourneyCrew?</div>
+      <div class="faq-answer">
+        JourneyCrew is a group travel coordination app for families and friends. It helps your crew plan trips together, share itineraries, keep messaging organized, and stay in sync while you travel.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Who is JourneyCrew for?</div>
+      <div class="faq-answer">
+        Any group that travels together: multi-family vacations, friend trips, reunions, sports teams, meetups, and more. If you have more than two people on a trip, JourneyCrew makes it easier.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Which platforms will you support?</div>
+      <div class="faq-answer">
+        We’re starting with an iOS app, then expanding based on feedback. Joining the waitlist helps us prioritize which platforms and features to ship next.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How will you use my email?</div>
+      <div class="faq-answer">
+        We’ll only use your email to send occasional product updates and an invite when JourneyCrew is ready for you to try. No spam, no selling your data, ever.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Is JourneyCrew free?</div>
+      <div class="faq-answer">
+        During the early beta period, JourneyCrew will be free for testers. We’ll share future pricing and premium features with you long before anything changes.
+      </div>
+    </div>
+  </section>
+
   <footer>
-    © 2025 JourneyCrew — All Rights Reserved  
+    © 2025 JourneyCrew — All Rights Reserved
   </footer>
 
 </body>
